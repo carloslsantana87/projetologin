@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AcessoConfig(AppConfig):
+class LogindeacessoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'acesso'
+    name = 'logindeacesso'

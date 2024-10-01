@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de Usuários</h1>
+    <form method="POST" action="{% url 'cadastro' %}">{% csrf_token %}
+        <label>
+            <input type="text" placeholder="Usuário" name="usuario" required>
+        </label>
+        <br><br>
+        <label>
+            <input type="email" placeholder="Email" name="email" required>
+        </label>
+        <br><br>
+        <label>
+            <input type="tel" placeholder="(XX) 9XXXX-XXXX" name="telefone" required>
+        </label>
+        <br><br>
+        <label>
+            <input type="password" placeholder="Senha" name="senha" required>
+        </label>
+        <br><br>
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+
+</html>

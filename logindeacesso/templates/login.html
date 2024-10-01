@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACESSO AO SISTEMA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login do Usuário</h1>
+    <form method="POST" action="{% url 'login' %}">{% csrf_token %}
+        <label>
+            <input type="text" placeholder="username" name="usuario" required>
+        </label>
+        <br><br>
+        <label>
+            <input type="password" placeholder="password" name="senha" required>
+        </label>
+        <br><br>
+        <input type="submit" value="ACESSAR">
+    </form>
+</body>
+
+</html>
