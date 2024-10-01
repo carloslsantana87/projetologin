@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 
 def cadastro(request):
     if request.method == 'GET':
@@ -28,6 +29,15 @@ def login(request):
         user = authenticate(username=usuario, password=senha)
 
         if user:
+            auth_login(request, user)
             return HttpResponse("Autenticado!")
         else:
             return HttpResponse("Usuário ou senha inválido!")
+
+def menuprincipal(request):
+    if request.user.is_authenticated:
+        return HttpResponse("menuprincipal")
+    return HttpResponse("É necessário está logado!")
+
+
+
